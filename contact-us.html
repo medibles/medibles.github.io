@@ -38,7 +38,7 @@
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-lg">
           <!-- Logo -->
-          <a class="navbar-brand" href="./index.html" aria-label="medibles">
+          <a class="navbar-brand" href="https://www.medibles.neutronfactory.com" aria-label="medibles">
             <img src="./assets-custom/logo.png" alt="Logo">
           </a>
           <!-- End Logo -->
@@ -74,9 +74,9 @@
 
                   <!-- Submenu - Why Medibles -->
                   <div id="blogSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="whyMediblesMegaMenu" style="min-width: 230px;">
-                    <a class="dropdown-item" href="./who-we-are.html">Who We Are</a>
-                    <a class="dropdown-item" href="./medical-advisory-board.html">Medical Advisory Board</a>
-                    <a class="dropdown-item" href="./contact-us.html">Contact Us</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/who-we-are.html">Who We Are</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/medical-advisory-board.html">Medical Advisory Board</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/contact-us.html">Contact Us</a>
                   </div>
                   <!-- End Submenu -->
                 </li>
@@ -88,10 +88,10 @@
 
                   <!-- Submenu - Learn More -->
                   <div id="blogSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="learnMoreMegaMenu" style="min-width: 230px;">
-                    <a class="dropdown-item" href="./what-we-do.html">What We Do</a><a class="dropdown-item" href="./cbd-personalization.html">The Assessment</a>
-                    <a class="dropdown-item" href="./drug-interactions.html">CBD Drug Interactions</a>
-                    <a class="dropdown-item" href="./faq.html">FAQ</a>
-                    <a class="dropdown-item" href="./blog.html">Blog</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/what-we-do.html">What We Do</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/drug-interactions.html">CBD Drug Interactions</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/faq.html">FAQ</a>
+                    <a class="dropdown-item" href="https://www.medibles.neutronfactory.com/blog.html">Blog</a>
                   </div>
                   <!-- End Submenu -->
                 </li>
@@ -141,17 +141,17 @@
                data-hs-leaflet-options='{
                  "map": {
                    "scrollWheelZoom": false,
-                   "coords": [34.68142961053801, -118.15632437419961]
-          },
+                   "coords": [37.4040344, -122.0289704]
+                 },
                  "marker": [
                    {
-                     "coords": [34.68142961053801, -118.15632437419961],
+                     "coords": [37.4040344, -122.0289704],
                      "icon": {
                        "iconUrl": "./assets/svg/components/map-pin.svg",
                        "iconSize": [50, 45]
                      },
                      "popup": {
-                       "text": "43931 15th Street West., Lancaster, California 93534"
+                       "text": "153 Williamson Plaza, Maggieberg"
                      }
                    }
                  ]
@@ -257,8 +257,8 @@
           <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
             <!-- Logo -->
             <div class="mb-4">
-              <a href="index.html" aria-label="medibles">
-                <img class="brand" src="./assets-custom/logo-white.png" alt="Logo">
+              <a href="index.html" aria-label="Front">
+                <img class="brand" src="./assets/svg/logos/logo-white.svg" alt="Logo">
               </a>
             </div>
             <!-- End Logo -->
@@ -370,6 +370,10 @@
               <li class="nav-item opacity mx-3">&#47;</li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Terms</a>
+              </li>
+              <li class="nav-item opacity mx-3">&#47;</li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Site Map</a>
               </li>
             </ul>
             <!-- End Nav Link -->
@@ -729,6 +733,17 @@
             }
           }
         });
+      });
+
+
+      // INITIALIZATION OF LEAFLET
+      // =======================================================
+      $('#map').each(function () {
+        var leaflet = $.HSCore.components.HSLeaflet.init($(this)[0]);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+          id: 'mapbox/light-v9'
+        }).addTo(leaflet);
       });
 
 
