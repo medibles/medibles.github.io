@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>medibles™ | Personalized THC-Free CBD Oil Products</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" href="./favicon.ico"> -->
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./assets/css/vendor.min.css">
+
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets-custom/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets-custom/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets-custom/favicon-16x16.png">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0">
+
+  <style type="text/css">
+    .dosage-heading, .dosage-value { display: inline; }
+    #results { display: none; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+
+    <div class="container space-2">
+      <form>
+
+        <div class="form-group">
+          <label class="input-label" for="exampleFormControlSelect1">Ailment</label>
+          <select id="ailment" class="form-control">
+            <option>Choose an option</option>
+            <option>ADHD</option>
+            <option>Alzheimer</option>
+            <option>Anxiety</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="input-label" for="exampleFormControlInput1">Weight</label>
+          <input type="text" id="weight" class="form-control" placeholder="Enter Weight in LBS">
+        </div>
+
+        <div class="form-group">
+          <label class="input-label" for="exampleFormControlSelect1">Severity</label>
+          <select id="severity" class="form-control">
+            <option>Choose an option</option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Severe</option>
+          </select>
+        </div>
+
+        <input class="btn btn-outline-primary" type="button" onClick="computeDosage()" Value="Compute Dosage" />
+
+      </form>
+
+      <div id="results">
+        <br><br>
+        <h3 class="dosage-heading">Step 1: </h3><h3 class="dosage-heading" id="dosage-step-1">--</h3>
+        <br>
+        <h3 class="dosage-heading">Step 2: </h3><h3 class="dosage-heading" id="dosage-step-2">--</h3>
+        <br>
+        <h3 class="dosage-heading">Step 3: </h3><h3 class="dosage-heading" id="dosage-step-3">--</h3>
+      </div>
+
+    </div>
+
+    <!-- Assessment Button -->
+<!--     <div class="container space-2 space-top-xl-3 space-bottom-lg-3 text-center">
+      <button type="button" class="btn btn-outline-primary" onClick="computeDosage()">Take Assessment Now</button>
+    </div> -->
+    <!-- End Assessment Button -->
+    
+
+  </main>
+
+
+
+  <script>
+
+      function computeDosage()
+      {
+        ailment = document.getElementById("ailment").value;
+        weight = document.getElementById("weight").value;
+        severity = document.getElementById("severity").value;
+
+        var x = document.getElementById("results");
+        results.style.display = "block";
+
+        if (ailment == "ADHD" && weight == 100 && severity == "Light") {
+          document.getElementById("dosage-step-1").innerHTML = "11mg";
+          document.getElementById("dosage-step-2").innerHTML = "23mg";
+          document.getElementById("dosage-step-3").innerHTML = "34mg";
+        } else if (ailment == "ADHD" && weight == 100 && severity == "Medium") { 
+          document.getElementById("dosage-step-1").innerHTML = "20mg";
+          document.getElementById("dosage-step-2").innerHTML = "39mg";
+          document.getElementById("dosage-step-3").innerHTML = "60mg";
+        } else if (ailment == "ADHD" && weight == 100 && severity == "Severe") { 
+          document.getElementById("dosage-step-1").innerHTML = "32mg";
+          document.getElementById("dosage-step-2").innerHTML = "64mg";
+          document.getElementById("dosage-step-3").innerHTML = "98mg";
+        } else {
+          document.getElementById("dosage-value").innerHTML = "Something Went Wrong";
+        }
+
+      }
+
+
+  </script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="./assets/js/vendor.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="./assets/js/theme.min.js"></script>
+
+
+  <!-- JS Implementing Plugins -->
+
+  <!-- JS Front -->
+
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+        desktop: {
+          position: 'left'
+        }
+      }).init();
+
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+
+      // INITIALIZATION OF TEXT ANIMATION (TYPING)
+      // =======================================================
+      var typed = $.HSCore.components.HSTyped.init(".js-text-animation");
+
+
+      // INITIALIZATION OF AOS
+      // =======================================================
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+
+      // INITIALIZATION OF SLICK CAROUSEL
+      // =======================================================
+      $('.js-slick-carousel').each(function() {
+        var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+      });
+
+
+      // INITIALIZATION OF FORM VALIDATION
+      // =======================================================
+      $('.js-validate').each(function() {
+        $.HSCore.components.HSValidation.init($(this), {
+          rules: {
+            confirmPassword: {
+              equalTo: '#signupPassword'
+            }
+          }
+        });
+      });
+
+
+      // INITIALIZATION OF SHOW ANIMATIONS
+      // =======================================================
+      $('.js-animation-link').each(function () {
+        var showAnimation = new HSShowAnimation($(this)).init();
+      });
+
+
+      // INITIALIZATION OF COUNTER
+      // =======================================================
+      $('.js-counter').each(function() {
+        var counter = new HSCounter($(this)).init();
+      });
+
+
+      // INITIALIZATION OF STICKY BLOCK
+      // =======================================================
+      var cbpStickyFilter = new HSStickyBlock($('#cbpStickyFilter'));
+
+
+      // INITIALIZATION OF CUBEPORTFOLIO
+      // =======================================================
+      $('.cbp').each(function () {
+        var cbp = $.HSCore.components.HSCubeportfolio.init($(this), {
+          layoutMode: 'grid',
+          filters: '#filterControls',
+          displayTypeSpeed: 0
+        });
+      });
+
+      $('.cbp').on('initComplete.cbp', function() {
+        // update sticky block
+        cbpStickyFilter.update();
+      });
+
+      $('.cbp').on('filterComplete.cbp', function() {
+        // update sticky block
+        cbpStickyFilter.update();
+      });
+
+      $('.cbp').on('pluginResize.cbp', function() {
+        // update sticky block
+        cbpStickyFilter.update();
+      });
+
+      // animated scroll to cbp container
+      $('#cbpStickyFilter').on('click', '.cbp-filter-item', function (e) {
+        $('html, body').stop().animate({
+          scrollTop: $('#demoExamplesSection').offset().top
+        }, 200);
+      });
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+
+    });
+  </script>
+
+  <!-- IE Support -->
+  <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>medibles™ | Personalized THC-Free CBD Oil Products</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" href="./favicon.ico"> -->
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./assets/css/vendor.min.css">
+
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets-custom/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets-custom/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets-custom/favicon-16x16.png">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0">
+</head>
+
+<body>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+
+
+    <!-- Collapse Section -->
+    <div class="container space-2">
+      <h1 style="text-align:center;"><br><br>Book Your<br>Telehealth<br>Video Consultation</h1>
+
+      
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/med-test?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:1030px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+      <!-- Calendly inline widget end -->
+
+        
+    </div>
+
+
+  </main>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="./assets/js/vendor.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="./assets/js/theme.min.js"></script>
+
+
+  <!-- JS Implementing Plugins -->
+
+  <!-- JS Front -->
+
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+        desktop: {
+          position: 'left'
+        }
+      }).init();
+
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+
+      // INITIALIZATION OF TEXT ANIMATION (TYPING)
+      // =======================================================
+      var typed = $.HSCore.components.HSTyped.init(".js-text-animation");
+
+
+      // INITIALIZATION OF AOS
+      // =======================================================
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+
+      // INITIALIZATION OF SLICK CAROUSEL
+      // =======================================================
+      $('.js-slick-carousel').each(function() {
+        var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+      });
+
+
+      // INITIALIZATION OF FORM VALIDATION
+      // =======================================================
+      $('.js-validate').each(function() {
+        $.HSCore.components.HSValidation.init($(this), {
+          rules: {
+            confirmPassword: {
+              equalTo: '#signupPassword'
+            }
+          }
+        });
+      });
+
+
+      // INITIALIZATION OF SHOW ANIMATIONS
+      // =======================================================
+      $('.js-animation-link').each(function () {
+        var showAnimation = new HSShowAnimation($(this)).init();
+      });
+
+
+      // INITIALIZATION OF COUNTER
+      // =======================================================
+      $('.js-counter').each(function() {
+        var counter = new HSCounter($(this)).init();
+      });
+
+
+      // INITIALIZATION OF STICKY BLOCK
+      // =======================================================
+      var cbpStickyFilter = new HSStickyBlock($('#cbpStickyFilter'));
+
+
+      // INITIALIZATION OF CUBEPORTFOLIO
+      // =======================================================
+      $('.cbp').each(function () {
+        var cbp = $.HSCore.components.HSCubeportfolio.init($(this), {
+          layoutMode: 'grid',
+          filters: '#filterControls',
+          displayTypeSpeed: 0
+        });
+      });
+
+      $('.cbp').on('initComplete.cbp', function() {
+        // update sticky block
+        cbpStickyFilter.update();
+      });
+
+      $('.cbp').on('filterComplete.cbp', function() {
+        // update sticky block
+        cbpStickyFilter.update();
+      });
+
+      $('.cbp').on('pluginResize.cbp', function() {
+        // update sticky block
+        cbpStickyFilter.update();
+      });
+
+      // animated scroll to cbp container
+      $('#cbpStickyFilter').on('click', '.cbp-filter-item', function (e) {
+        $('html, body').stop().animate({
+          scrollTop: $('#demoExamplesSection').offset().top
+        }, 200);
+      });
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+
+    });
+  </script>
+
+  <!-- IE Support -->
+  <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');
+  </script>
+
+
+</body>
+</html>

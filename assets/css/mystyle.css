@@ -1,0 +1,51 @@
+h2.step-text{
+    font-size:170px !important;
+}
+sup {
+    top: -2em !important;
+    font-size: 58px !important;
+}
+.client-img1>img{
+    border-radius:30px;
+}
+hr{
+    color: white !important;
+    border: 1px solid white;
+    width: 240px;
+}
+.testimal-row{
+    width: 335px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+section#testimonial>.container{
+    background-image: url('./assets/images/back.png');
+}
+.reviews-container{
+    background: #e8f9fe;
+    padding: 0 200px;
+}
+.contact-containter{
+    padding: 0 200px;
+    background:#5591ca;
+}
+.bewell{
+    padding: 0 200px;
+}
+.video-background{
+    background: url('../images/lady.png');
+    height: 500px;
+    margin: 30px auto;
+    border-radius: 11px;
+    background-position-y: center;
+}
+@media (max-width:980px){
+    .reviews-container, .contact-containter{
+
+        padding: 0 20px;
+    }
+    .bewell{
+        padding: 0 20px;
+    }
+}
