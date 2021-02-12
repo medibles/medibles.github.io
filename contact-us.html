@@ -257,8 +257,8 @@
           <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
             <!-- Logo -->
             <div class="mb-4">
-              <a href="index.html" aria-label="Front">
-                <img class="brand" src="./assets/svg/logos/logo-white.svg" alt="Logo">
+              <a href="index.html" aria-label="medibles">
+                <img class="brand" src="./assets-custom/logo-white.png" alt="Logo">
               </a>
             </div>
             <!-- End Logo -->
@@ -370,10 +370,6 @@
               <li class="nav-item opacity mx-3">&#47;</li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Terms</a>
-              </li>
-              <li class="nav-item opacity mx-3">&#47;</li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Site Map</a>
               </li>
             </ul>
             <!-- End Nav Link -->
@@ -733,17 +729,6 @@
             }
           }
         });
-      });
-
-
-      // INITIALIZATION OF LEAFLET
-      // =======================================================
-      $('#map').each(function () {
-        var leaflet = $.HSCore.components.HSLeaflet.init($(this)[0]);
-
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-          id: 'mapbox/light-v9'
-        }).addTo(leaflet);
       });
 
 
